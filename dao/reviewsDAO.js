@@ -29,7 +29,7 @@ export default class ReviewsDAO {
     }
   }
 
-  static async getReview(reviewId){
+  static async getReview(reviewId) {
     try {
       return await reviews.findOne({ _id: ObjectId(reviewId) })
     } catch (e) {
