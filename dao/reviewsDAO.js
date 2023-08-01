@@ -11,7 +11,7 @@ export default class ReviewsDAO {
     try {
       reviews = await conn.db("reviews").collection("reviews")
     } catch (e) {
-      console.error(`Unable to establish collection handles in userDAO:${e}`)
+      console.error(`Unable to establish collection handles in userDAO: ${e}`)
       }
     }
   static async addReview(movieId, user, review) {
@@ -23,7 +23,7 @@ export default class ReviewsDAO {
       }
 
       return await reviews.insertOne(reviewDoc)
-    } catch (e) {
+    } catch (e) {  
       console.error(`Unable to post review: ${e}`)
       return { error: e }
     }
@@ -71,8 +71,8 @@ export default class ReviewsDAO {
       return cursor.toArray()
     } catch (e) {
       console.error(`Unable to get review: ${e}`)
-      return { error:e }
-    }
+      return { error: e }
+    } 
   }
 } 
 
