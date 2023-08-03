@@ -7,11 +7,7 @@ export default class ReviewsController {
       const review = req.body.review
       const user = req.body.user
 
-      const reviewResponse = await ReviewsDAO.addReview(
-        movieId,
-        user,
-        review
-      )
+      const reviewResponse = await ReviewsDAO.addReview( movieId, user, review);
       res.json({ status: "success" })
     } catch (e) {
       res.status(500).json({ error: e.message })
@@ -39,11 +35,8 @@ export default class ReviewsController {
       const review = req.body.review
       const user = req.body.user
 
-      const reviewResponse = await ReviewsDAO.updateReview(
-        reviewId,
-        user,
-        review
-      )
+      const reviewResponse = await ReviewsDAO.addReview( movieId, user, review);
+       
 
       var { error } = reviewResponse
       if (error) {
@@ -87,7 +80,3 @@ export default class ReviewsController {
     }
   }
 }  
-// 64c349cf1f41c39f1492e2dd
-
-        // 64c34cbb1f41c39f1492e2de
-// review-backend.imkakerot.repl.co
